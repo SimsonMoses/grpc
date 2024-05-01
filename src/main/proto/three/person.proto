@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package three;
+option java_multiple_files = true;
+option java_package = "com.learn.grp.three";
+message Person{
+  int32 person_id = 6;
+  string name = 1;
+  int32 age = 2;
+  float salary = 3;
+  string address = 4;
+  int64 phone_number = 5;
+}

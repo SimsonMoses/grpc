@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package two;
+option java_multiple_files = true;
+
+option java_package = "com.learn.grp.two";
+message Person{
+  string name = 1;
+  int32 age = 2;
+}
+
+// to avoid the OuterClass we can use java_multiple_files, which creates the separate class of person
