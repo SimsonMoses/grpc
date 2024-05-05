@@ -10,4 +10,5 @@ message Person{
   float salary = 3;
   string address = 4;
   int64 phone_number = 5;
+  bool isActive = 7;
 }

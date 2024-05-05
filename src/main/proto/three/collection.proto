@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package three;
+option java_multiple_files = true;
+option java_package = "com.learn.grp.three";
+
+message Book{
+  string title = 1;
+  string author = 2;
+  int32 publishedYear = 3;
+}
+
+message Library{
+  string group = 1;
+  repeated Book books = 2;
+}
