@@ -4,14 +4,26 @@ package three;
 option java_multiple_files = true;
 option java_package = "com.learn.grp.three";
 
+enum Style{
+  sedan = 0; // must start with zero
+  SYV = 1;
+  COUPE = 2;
+}
+
 message Car{
   int32 carId = 1;
   string make = 2;
   string model = 3;
   int32 year = 4;
+  Style style = 5;
 }
-
+message Cars{
+  repeated Car carList = 1;
+}
 message Dealer{
   map<int32,Car> dealer = 1;
 }
-
+// while complex structure
+message DealerTwo{
+  map<int32,Cars> dealer = 1; // adding list car in the map value
+}
