@@ -5,9 +5,10 @@ option java_multiple_files = true;
 option java_package = "com.learn.grp.three";
 
 enum Style{
-  sedan = 0; // must start with zero
+  UNKNOWN = 0;
   SYV = 1;
   COUPE = 2;
+  sedan = 3; // must start with zero
 }
 
 message Car{
