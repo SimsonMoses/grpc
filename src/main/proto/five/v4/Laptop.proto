@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package five.v4;
+option java_multiple_files = true;
+option java_package = "com.learn.grp.five.v4";
+
+/*
+  while removing the field reserve the field number and name, earlier version would be using it.
+  add field price
+*/
+
+message Laptop{
+  string Brand = 1;
+  string modelNumber = 2;
+  reserved 3;
+  reserved "manufacturingYear";
+  Type type = 4;
+  int64 price = 5;
+}
+
+enum Type{
+  OFFICE = 0;
+  GAMING = 1;
+  PROFESSIONAL = 2;
+  PERSONAL = 3;
+}
+

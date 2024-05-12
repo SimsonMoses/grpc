@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package four.common;
+option java_multiple_files = true;
+option java_package = "com.learn.grp.common";
+
+enum Style{
+  UNKNOWN = 0;
+  SYV = 1;
+  COUPE = 2;
+  sedan = 3; // must start with zero
+}
+
+message Car{
+  int32 carId = 1;
+  string make = 2;
+  string model = 3;
+  int32 year = 4;
+  Style style = 5;
+}

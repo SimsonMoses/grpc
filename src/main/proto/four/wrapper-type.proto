@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+
+package four;
+option java_multiple_files = true;
+option java_package = "com.learn.grpc.four";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+message Sample{
+  google.protobuf.Int32Value number = 1;
+  google.protobuf.Timestamp time = 2;
+}

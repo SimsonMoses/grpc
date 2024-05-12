@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "four/common/address.proto";
+import "four/common/car.proto";
+
+package four;
+option java_multiple_files = true;
+option java_package = "com.learn.grp.four";
+
+message Person{
+  int32 person_id = 6;
+  string name = 1;
+  optional int32 age = 2;
+  four.common.Car car = 3;
+  four.common.Address address = 4;
+}
