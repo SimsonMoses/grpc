@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package six;
+
+option java_multiple_files = true;
+option java_package = "com.learn.grpc.six";
+
+message BalanceRequest{
+  int32 account_number = 1;
+}
+
+message AccountBalance{
+  int32 accountNumber = 1;
+  int32 balance = 2;
+}
+/*
+In parameter we can't able to pass the scalar types
+only object can be passed
+*/
+
+service BankService{
+  rpc GetAccountBalance(BalanceRequest) returns (AccountBalance); // while generating the source code the method name will be convert to java standard
+}

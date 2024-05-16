@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package five.v2;
 option java_multiple_files = true;
-option java_package = "com.learn.grp.five.v2";
+option java_package = "com.learn.grpc.five.v2";
 
 message Laptop{
   string Brand = 1;

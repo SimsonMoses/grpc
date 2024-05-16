@@ -4,8 +4,8 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.learn.five.v1.ParseVersionOne;
 import com.learn.five.v2.ParseVersionTwo;
 import com.learn.five.v3.ParseVersionThree;
-import com.learn.grp.five.v2.Laptop;
-import com.learn.grp.five.v2.Type;
+import com.learn.grpc.five.v2.Laptop;
+import com.learn.grpc.five.v2.Type;
 
 public class VersionTwoCompatibility {
     public static void main(String[] args) throws InvalidProtocolBufferException {

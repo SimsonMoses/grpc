@@ -3,7 +3,7 @@ package com.learn.five;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.learn.five.v1.ParseVersionOne;
 import com.learn.five.v2.ParseVersionTwo;
-import com.learn.grp.five.v1.Laptop;
+import com.learn.grpc.five.v1.Laptop;
 
 public class VersionOneCompatibility {
     public static void main(String[] args) throws InvalidProtocolBufferException {

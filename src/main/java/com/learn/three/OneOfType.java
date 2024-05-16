@@ -1,8 +1,8 @@
 package com.learn.three;
 
-import com.learn.grp.three.Credential;
-import com.learn.grp.three.Email;
-import com.learn.grp.three.Phone;
+import com.learn.grpc.three.Credential;
+import com.learn.grpc.three.Email;
+import com.learn.grpc.three.Phone;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

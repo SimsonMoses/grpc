@@ -5,8 +5,8 @@ import com.learn.five.v1.ParseVersionOne;
 import com.learn.five.v2.ParseVersionTwo;
 import com.learn.five.v3.ParseVersionThree;
 import com.learn.five.v4.ParseVersionFour;
-import com.learn.grp.five.v4.Laptop;
-import com.learn.grp.five.v4.Type;
+import com.learn.grpc.five.v4.Laptop;
+import com.learn.grpc.five.v4.Type;
 
 public class VersionFourCompatibility {
     public static void main(String[] args) throws InvalidProtocolBufferException {

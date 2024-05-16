@@ -1,7 +1,7 @@
 package com.learn.three;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.learn.grp.three.Person;
+import com.learn.grpc.three.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

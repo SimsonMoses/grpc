@@ -1,6 +1,6 @@
 package com.learn.two;
 
-import com.learn.grp.two.Person;
+import com.learn.grpc.two.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

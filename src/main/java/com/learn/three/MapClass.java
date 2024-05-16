@@ -1,8 +1,8 @@
 package com.learn.three;
 
-import com.learn.grp.three.Car;
-import com.learn.grp.three.Dealer;
-import com.learn.grp.three.Style;
+import com.learn.grpc.three.Car;
+import com.learn.grpc.three.Dealer;
+import com.learn.grpc.three.Style;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

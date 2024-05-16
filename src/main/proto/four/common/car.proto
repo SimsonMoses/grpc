@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package four.common;
 option java_multiple_files = true;
-option java_package = "com.learn.grp.common";
+option java_package = "com.learn.grpc.common";
 
 enum Style{
   UNKNOWN = 0;

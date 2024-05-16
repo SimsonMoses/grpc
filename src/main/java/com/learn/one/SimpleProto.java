@@ -1,6 +1,6 @@
 package com.learn.one;
 
-import com.learn.grp.one.PersonOuterClass;
+import com.learn.grpc.one.PersonOuterClass;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

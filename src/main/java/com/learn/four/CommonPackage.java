@@ -1,8 +1,8 @@
 package com.learn.four;
 
-import com.learn.grp.common.Address;
-import com.learn.grp.common.Car; // make note that Car is imported from the common package
-import com.learn.grp.four.Person;
+import com.learn.grpc.common.Address;
+import com.learn.grpc.common.Car; // make note that Car is imported from the common package
+import com.learn.grpc.four.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

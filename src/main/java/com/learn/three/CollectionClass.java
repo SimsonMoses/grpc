@@ -1,7 +1,7 @@
 package com.learn.three;
 
-import com.learn.grp.three.Book;
-import com.learn.grp.three.Library;
+import com.learn.grpc.three.Book;
+import com.learn.grpc.three.Library;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

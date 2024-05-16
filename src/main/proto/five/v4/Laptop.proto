@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package five.v4;
 option java_multiple_files = true;
-option java_package = "com.learn.grp.five.v4";
+option java_package = "com.learn.grpc.five.v4";
 
 /*
   while removing the field reserve the field number and name, earlier version would be using it.

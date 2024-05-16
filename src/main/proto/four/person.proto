@@ -5,7 +5,7 @@ import "four/common/car.proto";
 
 package four;
 option java_multiple_files = true;
-option java_package = "com.learn.grp.four";
+option java_package = "com.learn.grpc.four";
 
 message Person{
   int32 person_id = 6;

@@ -1,7 +1,7 @@
 package com.learn.five.v3;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.learn.grp.five.v3.Laptop;
+import com.learn.grpc.five.v3.Laptop;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
