@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+
 package six;
 
 option java_multiple_files = true;
@@ -13,11 +15,18 @@ message AccountBalance{
   int32 accountNumber = 1;
   int32 balance = 2;
 }
+
+message AllAccountResponse{
+  repeated AccountBalance accounts = 1;
+}
+
 /*
 In parameter we can't able to pass the scalar types
 only object can be passed
+Without parameter we can't able to create the service method, so use the Empty proto provided by google
 */
 
 service BankService{
   rpc GetAccountBalance(BalanceRequest) returns (AccountBalance); // while generating the source code the method name will be convert to java standard
+  rpc GetAllAccount(google.protobuf.Empty) returns (AllAccountResponse);
 }
