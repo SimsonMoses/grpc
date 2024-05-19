@@ -21,11 +21,11 @@ public class AbstractChannelTest {
                 .build();
     }
 
-
-
     @AfterAll
     public void stopChannel() throws InterruptedException {
         this.channel.awaitTermination(5, TimeUnit.SECONDS);
     }
 
 }
+
+/* Channel are created here */
