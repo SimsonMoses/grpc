@@ -29,6 +29,13 @@ message Money{
   int32 amount = 1;
 }
 
+message DepositeRequest{
+  oneof request{
+    int32 AccountNumber = 1;
+    Money money = 2;
+  }
+}
+
 /*
 In parameter we can't able to pass the scalar types
 only object can be passed
@@ -43,4 +50,7 @@ service BankService{
 
   // server streaming
   rpc withDraw(WithDrawRequest) returns (stream Money);
+
+  // client streaming
+  rpc DepositAmount(stream DepositeRequest) returns (AccountBalance);
 }
