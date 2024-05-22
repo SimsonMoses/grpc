@@ -16,7 +16,7 @@ public class AbstractChannelTest {
 
     @BeforeAll
     public void setUpChannel() {
-        this.channel = ManagedChannelBuilder.forAddress("localhost", 5000)
+        this.channel = ManagedChannelBuilder.forAddress("localhost", 5001)
                 .usePlaintext()
                 .build();
     }

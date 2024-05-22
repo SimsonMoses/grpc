@@ -1,10 +1,11 @@
 package com.learn.common;
 
 import com.learn.six.BankService;
+import com.learn.six.TransferService;
 
 public class Demo {
     public static void main(String[] args) {
-        GrpcServer.create(new BankService())
+        GrpcServer.create(new BankService(),new TransferService())
                 .start()
                 .await();
     }

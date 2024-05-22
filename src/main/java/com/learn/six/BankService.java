@@ -1,16 +1,14 @@
 package com.learn.six;
 
-import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.Empty;
 import com.learn.grpc.six.*;
 import com.learn.six.repository.AccountRepository;
-import com.learn.six.requestHandler.DepositRequestHandler;
+import com.learn.six.requesthandler.DepositeRequestHandler;
 import io.grpc.stub.StreamObserver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class BankService extends BankServiceGrpc.BankServiceImplBase {
 
@@ -66,6 +64,6 @@ public class BankService extends BankServiceGrpc.BankServiceImplBase {
 
     @Override
     public StreamObserver<DepositeRequest> depositAmount(StreamObserver<AccountBalance> responseObserver) {
-        return new DepositRequestHandler(responseObserver);
+        return new DepositeRequestHandler(responseObserver);
     }
 }

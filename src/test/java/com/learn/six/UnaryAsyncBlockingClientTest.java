@@ -20,7 +20,7 @@ public class UnaryAsyncBlockingClientTest extends AbstractTest {
         var account = BalanceRequest.newBuilder().setAccountNumber(1).build();
 
         var latch = new CountDownLatch(1); // intro java 5 onwards
-        stub.getAccountBalance(account, new StreamObserver<AccountBalance>() {
+        bankStub.getAccountBalance(account, new StreamObserver<AccountBalance>() {
             @Override
             public void onNext(AccountBalance accountBalance) {
                 log.info("Account Balance: {}", accountBalance.getBalance());
@@ -52,7 +52,7 @@ public class UnaryAsyncBlockingClientTest extends AbstractTest {
     public void getAccountDetail(){
         var account = BalanceRequest.newBuilder().setAccountNumber(1).build();
         var observer = ResponseObserver.<AccountBalance>create();
-        stub.getAccountBalance(account,observer);
+        bankStub.getAccountBalance(account,observer);
         observer.await();
         Assertions.assertEquals(1,observer.getList().size());
         Assertions.assertEquals(490,observer.getList().get(0).getBalance());

@@ -1,7 +1,6 @@
 package com.learn.six;
 
 import com.learn.common.ResponseObserver;
-import com.learn.grpc.six.AccountBalance;
 import com.learn.grpc.six.Money;
 import com.learn.grpc.six.WithDrawRequest;
 import org.junit.jupiter.api.Assertions;
@@ -29,7 +28,7 @@ public class ServerStreamingClientTest extends AbstractTest {
     public void asyncClientWithdraw(){
         var request = WithDrawRequest.newBuilder().setAccountNumber(2).setAmount(30).build();
         var observer = ResponseObserver.<Money>create();
-        stub.withDraw(request,observer);
+        bankStub.withDraw(request,observer);
         observer.await();
         Assertions.assertEquals(3,observer.getList().size());
         Assertions.assertEquals(10,observer.getList().get(0).getAmount());

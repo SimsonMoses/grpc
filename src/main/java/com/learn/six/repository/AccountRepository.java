@@ -26,7 +26,7 @@ public class AccountRepository {
         db.computeIfPresent(accountNumber, (k, v) -> v - amount);
     }
 
-    public static void dopositAmount(int accountNumber, int amount) {
+    public static void depositAmount(int accountNumber, int amount) {
         db.computeIfPresent(accountNumber, (k, v) -> v + amount);
     }
 }

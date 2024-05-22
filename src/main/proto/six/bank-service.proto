@@ -36,6 +36,22 @@ message DepositeRequest{
   }
 }
 
+message TransferRequest{
+    int32 fromAccount = 1;
+    int32 toAccount = 2;
+    int32 amount = 3;
+}
+
+enum TransferStatus{
+  REJECTED = 0;
+  COMPLETED = 1;
+}
+
+message TransferResponse{
+  TransferStatus transferStatus = 1;
+  AccountBalance fromAccount = 2;
+  AccountBalance toAccount = 3;
+}
 /*
 In parameter we can't able to pass the scalar types
 only object can be passed
@@ -53,4 +69,8 @@ service BankService{
 
   // client streaming
   rpc DepositAmount(stream DepositeRequest) returns (AccountBalance);
+}
+
+service TransferService{
+  rpc transfer(stream TransferRequest) returns (stream TransferResponse);
 }
