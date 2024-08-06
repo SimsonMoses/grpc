@@ -32,11 +32,11 @@ jobs:
 #          path: '${{ github.workspace }}/target/*.jar'
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up JDK 17
         if: matrix.language == 'java'
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v1
         with:
           java-version: '17'
 
@@ -46,7 +46,14 @@ jobs:
 
       - name: Build with Maven
         if: matrix.language == 'java'
-        run: mvn clean compile
+        run: mvn clean install
+
+      - name: Upload artifact for deployment job
+        if: matrix.language == 'java'
+        uses: actions/upload-artifact@v3
+        with:
+          name: java-app
+          path: '${{ github.workspace }}/target/*.jar'
 
       - name: Set up Go
         if: matrix.language == 'go'
