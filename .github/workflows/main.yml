@@ -10,19 +10,65 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+    strategy:
+      matrix:
+        language: [ java, go, python ]
 
-      - name: Set up Java version
-        uses: actions/setup-java@v1
+#    steps:
+#      - uses: actions/checkout@v4
+#
+#      - name: Set up Java version
+#        uses: actions/setup-java@v1
+#        with:
+#          java-version: '17'
+#
+#      - name: Build with Maven
+#        run: mvn clean install
+#
+#      - name: Upload artifact for deployment job
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: java-app
+#          path: '${{ github.workspace }}/target/*.jar'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        if: matrix.language == 'java'
+        uses: actions/setup-java@v2
         with:
           java-version: '17'
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Install Maven
+        if: matrix.language == 'java'
+        run: sudo apt-get install maven -y
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+      - name: Build with Maven
+        if: matrix.language == 'java'
+        run: mvn clean compile
+
+      - name: Set up Go
+        if: matrix.language == 'go'
+        uses: actions/setup-go@v2
         with:
-          name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          go-version: '1.16'
+
+      - name: Generate Go files with Maven
+        if: matrix.language == 'go'
+        run: mvn clean compile -Pgenerate-go
+
+      - name: Set up Python
+        if: matrix.language == 'python'
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install protobuf for Python
+        if: matrix.language == 'python'
+        run: pip install grpcio-tools
+
+      - name: Generate Python files with Maven
+        if: matrix.language == 'python'
+        run: mvn clean compile -Pgenerate-python
+

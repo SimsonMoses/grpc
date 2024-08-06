@@ -88,6 +88,10 @@
                             <goal>compile</goal>
                             <goal>compile-custom</goal>
                         </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/generated-sources/protobuf/java
+                            </outputDirectory>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -105,5 +109,60 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>generate-go</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.xolstice.maven.plugins</groupId>
+                        <artifactId>protobuf-maven-plugin</artifactId>
+                        <version>0.6.1</version>
+                        <configuration>
+                            <protocArtifact>com.google.protobuf:protoc:3.17.3:exe:${os.detected.classifier}</protocArtifact>
+                            <pluginId>grpc-go</pluginId>
+                            <pluginArtifact>google.golang.org/protobuf/cmd/protoc-gen-go:1.26.0:exe:${os.detected.classifier}</pluginArtifact>
+                            <outputDirectory>${project.build.directory}/generated-sources/protobuf/go</outputDirectory>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>compile</goal>
+                                    <goal>compile-custom</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>generate-python</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.xolstice.maven.plugins</groupId>
+                        <artifactId>protobuf-maven-plugin</artifactId>
+                        <version>0.6.1</version>
+                        <configuration>
+                            <protocArtifact>com.google.protobuf:protoc:3.17.3:exe:${os.detected.classifier}</protocArtifact>
+                            <pluginId>grpc-python</pluginId>
+                            <pluginArtifact>grpcio-tools:1.40.0</pluginArtifact>
+                            <outputDirectory>${project.build.directory}/generated-sources/protobuf/python</outputDirectory>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>compile</goal>
+                                    <goal>compile-custom</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 
 </project>
