@@ -6,7 +6,7 @@ import "four/common/car.proto";
 package four;
 option java_multiple_files = true;
 option java_package = "com.learn.grpc.four";
-
+// Importing proto from other files
 message Person{
   int32 person_id = 6;
   string name = 1;

@@ -16,6 +16,5 @@ public class VersionFourCompatibility {
         ParseVersionTwo.parseObject(laptop.toByteArray());
         ParseVersionThree.parseObject(laptop.toByteArray());
         ParseVersionFour.parseObject(laptop.toByteArray());
-
     }
 }

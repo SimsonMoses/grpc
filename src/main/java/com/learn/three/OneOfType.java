@@ -15,7 +15,7 @@ public class OneOfType {
         var email = Email.newBuilder().setAddress("sim@gmail.com").setPassword("simson").build();
         var credential = Credential.newBuilder().setEmail(email).build();
 //        login(credential);
-        login(Credential.newBuilder().setEmail(email).setPhone(phone).build()); //  on assigning both, last assigned will be consider(taken)
+        login(Credential.newBuilder().setEmail(email).setPhone(phone).build()); //  on assigning both, last assigned will be consider(taken as the input)
     }
 
     public static void login(Credential credential){

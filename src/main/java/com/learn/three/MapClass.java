@@ -21,6 +21,5 @@ public class MapClass {
         log.info("Dealer: {}",dealer);
         log.info("Dealer contains: {}",dealer.containsDealer(1));
         log.info("Dealer Map: {}",dealer.getDealerMap());
-
     }
 }

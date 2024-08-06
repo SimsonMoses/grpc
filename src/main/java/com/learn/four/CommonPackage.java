@@ -10,12 +10,11 @@ public class CommonPackage {
     private static final Logger log = LoggerFactory.getLogger(CommonPackage.class);
     public static void main(String[] args) {
         // example for using the common class
-        //
+        // style as the enum in style
         Car car = Car.newBuilder().setMake("tata").setCarId(1).build();
         Address address = Address.newBuilder().setCity("cbe").build();
         Person person = Person.newBuilder().setAddress(address).setCar(car).build();
         person.hasAge();
         log.info("Person Object: {}",person);
-
     }
 }

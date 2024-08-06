@@ -7,11 +7,11 @@ package six;
 option java_multiple_files = true;
 option java_package = "com.learn.grpc.six";
 
-message BalanceRequest{
+message BalanceRequest {
   int32 account_number = 1;
 }
 
-message AccountBalance{
+message AccountBalance {
   int32 accountNumber = 1;
   int32 balance = 2;
 }

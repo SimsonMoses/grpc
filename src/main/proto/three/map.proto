@@ -4,11 +4,11 @@ package three;
 option java_multiple_files = true;
 option java_package = "com.learn.grpc.three";
 
-enum Style{
+enum Style{ // must start with zero
   UNKNOWN = 0;
   SYV = 1;
   COUPE = 2;
-  sedan = 3; // must start with zero
+  sedan = 3;
 }
 
 message Car{
