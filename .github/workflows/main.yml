@@ -3,7 +3,7 @@ name: Build grpc
 on:
   push:
     branches:
-      - dev
+      - feat/proto-build
   workflow_dispatch:
 
 jobs:
