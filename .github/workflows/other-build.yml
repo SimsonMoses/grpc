@@ -40,9 +40,9 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Install Maven
-        if: matrix.language == 'java'
-        run: sudo apt-get install maven -y
+      # - name: Install Maven
+      #   if: matrix.language == 'java'
+      #   run: sudo apt-get install maven -y
 
       - name: Build with Maven
         if: matrix.language == 'java'
@@ -55,27 +55,27 @@ jobs:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
 
-      - name: Set up Go
-        if: matrix.language == 'go'
-        uses: actions/setup-go@v2
-        with:
-          go-version: '1.16'
+      # - name: Set up Go
+      #   if: matrix.language == 'go'
+      #   uses: actions/setup-go@v2
+      #   with:
+      #     go-version: '1.16'
 
-      - name: Generate Go files with Maven
-        if: matrix.language == 'go'
-        run: mvn clean compile -Pgenerate-go
+      # - name: Generate Go files with Maven
+      #   if: matrix.language == 'go'
+      #   run: mvn clean compile -Pgenerate-go
 
-      - name: Set up Python
-        if: matrix.language == 'python'
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
+      # - name: Set up Python
+      #   if: matrix.language == 'python'
+      #   uses: actions/setup-python@v2
+      #   with:
+      #     python-version: '3.8'
 
-      - name: Install protobuf for Python
-        if: matrix.language == 'python'
-        run: pip install grpcio-tools
+      # - name: Install protobuf for Python
+      #   if: matrix.language == 'python'
+      #   run: pip install grpcio-tools
 
-      - name: Generate Python files with Maven
-        if: matrix.language == 'python'
-        run: mvn clean compile -Pgenerate-python
+      # - name: Generate Python files with Maven
+      #   if: matrix.language == 'python'
+      #   run: mvn clean compile -Pgenerate-python
 
